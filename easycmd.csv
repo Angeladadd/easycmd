@@ -1,0 +1,3 @@
+port,netstat -anp
+netstat -anp,netstat -anp
+annoying-complex-fking-command,annoying-complex-fking-command
