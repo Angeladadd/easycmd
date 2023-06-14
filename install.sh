@@ -1,3 +1,4 @@
-pip install -r requirements.txt
+pip3 install -r requirements.txt
+python3 config.py
 sudo cp easycmd /usr/local/bin
-chmod +x /usr/local/bin/easycmd
+sudo chmod +x /usr/local/bin/easycmd
