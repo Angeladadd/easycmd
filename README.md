@@ -12,14 +12,19 @@ bash install.sh
 
 1. Store an annoying command
 
-```
+```bash
 easycmd cache annoying-complex-fking-command
+# Or with an alias
+# easycmd cache annoying-complex-fking-command -a test
+
+# If you want to store commands with parameters
+# easycmd cache "another command -with parameter"
 ```
 
-2. Search the annoying command
+2. Search the annoying command by entering part of it or its alias
 
 ```
-easycmd -c anno
+easycmd find anno
 ```
 
 The output shall be
@@ -27,7 +32,3 @@ The output shall be
 ```
 ALIAS: annoying-complex-fking-command CMD: annoying-complex-fking-command
 ```
-
-### Known issue
-
-1. bad experience when entering command with flags and parameters

@@ -13,7 +13,9 @@ def main():
     cache_parser.add_argument('value', help='The command needs to be cached')
     cache_parser.add_argument('-a', dest='alias', help='Alias of the command')
 
-    parser.add_argument('-c', dest='value', help='Command to find')
+    find_parser = subparsers.add_parser('find', help='Find a command by either entering part of it or its alias')
+    find_parser.add_argument('keyword', help='Keyword to find a command')
+
     parser.add_argument('-s', dest='source', help='Source file path')
 
     args = parser.parse_args()
@@ -23,10 +25,12 @@ def main():
     
     if args.command == 'cache':
         storage.cache(args.value, args.alias or None)
-    else:
-        matches = storage.match(args.value)
+    elif args.command == 'find':
+        matches = storage.match(args.keyword)
         for alias, cmd in matches.items():
             print('ALIAS:', alias, 'CMD:', cmd)
+    else:
+        print('Command unsupported: ', args.command)
 
 
 if __name__ == '__main__':
